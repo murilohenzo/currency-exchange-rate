@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+  database:
+    container_name: db_currency_exchange_rate
+    restart: always
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "3306:3306"
