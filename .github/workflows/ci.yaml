@@ -36,7 +36,7 @@ jobs:
           pip install -r requirements.txt
       - name: Test with pytest
         run: |
-          pytest tests.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+          pytest --doctest-modules --junitxml=junit/test-results.xml --cov=services --cov=adapters --cov-report=xml --cov-report=html
       - name: Code Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
