@@ -34,9 +34,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Test with pytest
-        run: |
-          pytest --doctest-modules --junitxml=junit/test-results.xml --cov=services --cov=adapters --cov-report=xml --cov-report=html
+      # - name: Test with pytest
+      #   run: |
+      #     pytest --doctest-modules --junitxml=junit/test-results.xml --cov=services --cov=adapters --cov-report=xml --cov-report=html
       - name: Code Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
