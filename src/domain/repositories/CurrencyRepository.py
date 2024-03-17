@@ -5,9 +5,13 @@ from domain.entities.Currency import Currency
 
 class CurrencyRepository(ABC):
     @abstractmethod
-    def get_by_code(self, code: str) -> Optional[Currency]:
+    def find_by_id(self, id: int) -> Optional[Currency]:
         pass
 
     @abstractmethod
-    def get_all(self) -> List[Currency]:
+    def find_all(self) -> List[Currency]:
+        pass
+    
+    @abstractmethod
+    def create(self, currency: Currency) -> Currency:
         pass

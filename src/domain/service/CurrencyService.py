@@ -6,8 +6,13 @@ class CurrencyService:
     def __init__(self, currency_repository: CurrencyRepository):
         self.currency_repository = currency_repository
 
-    def get_currency_by_code(self, code: str) -> Currency:
-        return self.currency_repository.get_by_code(code)
+    def find_by_id(self, id: int) -> Currency:
+        currency = self.currency_repository.find_by_id(id)
+        return currency
 
-    def get_all_currencies(self) -> List[Currency]:
-        return self.currency_repository.get_all()
+    def find_all(self) -> List[Currency]:
+        currencies = self.currency_repository.find_all()
+        return currencies
+    
+    def create(self, currency: Currency) -> Currency:
+        return self.currency_repository.create(currency)

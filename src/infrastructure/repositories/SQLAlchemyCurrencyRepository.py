@@ -7,8 +7,13 @@ class SQLAlchemyCurrencyRepository(CurrencyRepository):
     def __init__(self, session: Session):
         self.session = session
 
-    def get_by_code(self, code: str) -> Optional[Currency]:
-        return self.session.query(Currency).filter_by(code=code).first()
+    def find_by_id(self, id: int) -> Optional[Currency]:
+        return self.session.query(Currency).filter_by(id=id).first()
 
-    def get_all(self) -> List[Currency]:
+    def find_all(self) -> List[Currency]:
         return self.session.query(Currency).all()
+    
+    def create(self, currency: Currency) -> Currency:
+        self.session.add(currency)
+        self.session.commit()
+        return currency
