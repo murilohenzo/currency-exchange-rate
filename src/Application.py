@@ -18,6 +18,7 @@ class Application:
     def register_currency_controller(self):
         currency_controller = CurrencyController(self.container.get_currency_service())
         self.app.add_url_rule('/currencies/<int:id>', 'find_by_id', currency_controller.find_by_id, methods=['GET'])
+        self.app.add_url_rule('/currencies/<string:name>', 'find_by_name', currency_controller.find_by_name, methods=['GET'])
         self.app.add_url_rule('/currencies', 'find_all', currency_controller.find_all, methods=['GET'])
         self.app.add_url_rule('/currencies', 'create', currency_controller.create, methods=['POST'])
     
