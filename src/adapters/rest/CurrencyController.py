@@ -1,5 +1,6 @@
-from flask import abort, jsonify, request
-from domain.service.Monad import Maybe
+from flask import jsonify, request
+from adapters.representation.CurrencyRepresentationRequest import CurrencyRepresentationRequest
+from utils.Monad import Maybe
 from adapters.representation.CurrencyRepresentationResponse import CurrencyRepresentationResponse
 from mappers.CurrencyMapper import CurrencyMapper
 
@@ -18,8 +19,8 @@ class CurrencyController:
                                    .value or jsonify({"error": "Currency not found"}),404          
     
     def find_all(self):
-      
       currencies = self.currency_service.find_all()
+      # uso de list comprehension
       currency_responses = [CurrencyRepresentationResponse(
           id=currency.id,
           name=currency.name,
@@ -31,8 +32,8 @@ class CurrencyController:
         #Closure para retornar moedas com o nome selecionado
         def get_currencies_by_name(currency):
             return currency.name == name
-        currency = self.currency_service.find_all()
-        filtered_currencies = currency.filter(get_currencies_by_name, currency)
+        currencies = self.currency_service.find_all()
+        filtered_currencies = filter(get_currencies_by_name, currencies)
         currency_responses = [CurrencyRepresentationResponse(
             id=currency.id,
             name=currency.name,
@@ -42,7 +43,7 @@ class CurrencyController:
     
     def create(self):
         data = request.json
-        currency_request = CurrencyRepresentationResponse(**data)
+        currency_request = CurrencyRepresentationRequest(**data)
         currency = CurrencyMapper.map_request_to_entity(currency_request)
         created_currency = self.currency_service.create(currency)
         response = CurrencyMapper.map_entity_to_response(created_currency)

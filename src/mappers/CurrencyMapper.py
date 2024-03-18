@@ -1,6 +1,6 @@
 from adapters.representation.CurrencyRepresentationRequest import CurrencyRepresentationRequest
 from adapters.representation.CurrencyRepresentationResponse import CurrencyRepresentationResponse
-from domain.entities import Currency
+from domain.entities.Currency import Currency
 
 class CurrencyMapper:
     @staticmethod
