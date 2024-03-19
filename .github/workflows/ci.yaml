@@ -36,10 +36,9 @@ jobs:
           pip install -r requirements.txt
       - name: Verify installed dependencies
         run: pip freeze
-      - name: Install tox for coverage
-        run: pip install tox
-      - name: Run tox
-        run: tox -e py
+      - name: Tests
+        run: |
+          pytest -v  --cov --cov-report=xml --cov-report=html
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
