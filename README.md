@@ -53,11 +53,13 @@ pip install -r requirements.txt
 #### Step 1: Start MySQL Database
 
 - Navigate to the `docker-compose` directory:
+
   ```bash
   cd docker-compose
   ```
 
 - Start the MySQL database using Docker Compose:
+
   ```bash
   docker-compose up -d
   ```
@@ -65,9 +67,23 @@ pip install -r requirements.txt
 #### Step 2: Run the Application
 
 - Navigate back to the project root directory:
+
   ```bash
   python src/Application.py
   ```
+
+### Run tests
+- To run the tests with coverage
+
+```bash	
+  pytest --cov=src
+```
+
+- To generate test coverage report with html
+
+```bash	
+  pytest --cov=src --cov-report=html
+```
 
 ### Retrieve Exchange Rates
 
