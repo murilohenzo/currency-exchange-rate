@@ -34,8 +34,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      - name: Verify installed dependencies
+        run: pip freeze
       - name: Install tox for coverage
-        run: pip install tox SQLAlchemy
+        run: pip install tox
       - name: Run tox
         run: tox -e py
       - name: SonarCloud Scan
