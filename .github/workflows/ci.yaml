@@ -1,4 +1,4 @@
-name: Python package
+name: currency_exchange_rate
 
 on: 
   push:
@@ -35,7 +35,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Install tox for coverage
-        run: pip install tox
+        run: pip install tox SQLAlchemy
       - name: Run tox
         run: tox -e py
       - name: SonarCloud Scan
