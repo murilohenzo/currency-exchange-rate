@@ -1,5 +1,5 @@
 import unittest
-from utils.Monad import Maybe
+from src.utils.Monad import Maybe
 
 
 class TestMaybe(unittest.TestCase):

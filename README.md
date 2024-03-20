@@ -6,11 +6,11 @@ This project provides a simple and efficient API for querying currency exchange 
 
 ## Features
 
-- [ ] Retrieve exchange rates between different currencies.
-- [ ] Convert currency values based on the provided exchange rates.
-- [ ] Implement rate limiting to prevent abuse and ensure fair usage.
-- [ ] Ensure test coverage reaches 80% to guarantee robustness and reliability.
-- [ ] High availability to ensure constant access to currency exchange functionalities.
+- [x] Retrieve currencies
+- [x] Register currencies
+- [x] Retrieve currency by name
+- [x] Retrieve currency by ID
+- [x] Ensure test coverage reaches 80% to guarantee robustness and reliability.
 
 ## Architecture
 

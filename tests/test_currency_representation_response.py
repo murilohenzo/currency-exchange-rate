@@ -1,5 +1,5 @@
 import unittest
-from adapters.representation.CurrencyRepresentationResponse import CurrencyRepresentationResponse
+from src.adapters.representation.CurrencyRepresentationResponse import CurrencyRepresentationResponse
 
 class TestCurrencyRepresentationResponse(unittest.TestCase):
     def test_init(self):

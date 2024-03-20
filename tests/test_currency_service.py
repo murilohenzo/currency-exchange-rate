@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import MagicMock
-from domain.service.CurrencyService import CurrencyService, Currency, CurrencyRepository
+from src.domain.service.CurrencyService import CurrencyService, Currency, CurrencyRepository
 
 class TestCurrencyService(unittest.TestCase):
     def setUp(self):

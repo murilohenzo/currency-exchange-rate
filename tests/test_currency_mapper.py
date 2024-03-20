@@ -1,5 +1,5 @@
 import unittest
-from mappers.CurrencyMapper import CurrencyMapper, CurrencyRepresentationRequest, CurrencyRepresentationResponse, Currency
+from src.mappers.CurrencyMapper import CurrencyMapper, CurrencyRepresentationRequest, CurrencyRepresentationResponse, Currency
 
 class TestCurrencyMapper(unittest.TestCase):
     def test_map_request_to_entity(self):
