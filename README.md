@@ -10,7 +10,7 @@ This project provides a simple and efficient API for querying currency exchange 
 - [x] Register currencies
 - [x] Retrieve currency by name
 - [x] Retrieve currency by ID
-- [x] Ensure test coverage reaches 80% to guarantee robustness and reliability.
+- [x] Ensure test coverage reaches 80% to guarantee robustness and reliability ([Sonar](https://sonarcloud.io/summary/new_code?id=murilohenzo_currency-exchange-rate)).
 
 ## Architecture
 
